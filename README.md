@@ -38,6 +38,7 @@
 
 本插件在编写过程中，参考了不少以下项目，对各位大佬表示由衷的感谢，若有相关侵权问题请联系作者删除
 
+Bot框架：
 [NoneBot](https://github.com/nonebot)
 
 README模板参考：
