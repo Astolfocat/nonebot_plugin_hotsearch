@@ -1,11 +1,12 @@
 [tool.poetry]
 name = "nonebot-plugin-hotsearch"
-version = "0.1.0"
+version = "0.1.1"
 description = "nonebot2 plugin for hotsearch"
 authors = ["Astolfocat <2364934266@qq.com>"]
 readme = "README.md"
 packages = [{include = "nonebot_plugin_hotsearch"}]
 license = "MIT"
+
 
 [tool.poetry.dependencies]
 python = "^3.9"

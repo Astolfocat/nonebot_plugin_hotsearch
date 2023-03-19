@@ -1,4 +1,4 @@
-import requests, json, re, httpx
+import json, re, httpx
 from nonebot import on_command
 from nonebot.adapters.onebot.v11 import (
     Bot,
@@ -47,7 +47,7 @@ async def weiboresou(bot: Bot, event: GroupMessageEvent):
     await bot.send(event=event, message='获取中……')
     url = 'https://weibo.com/ajax/side/hotSearch'
     srcurl = "https://s.weibo.com/weibo?q="
-    res = requests.get(url)
+    res = httpx.get(url)
     r = res.json()["data"]["realtime"][:cnt]
     msg_list = ['微博热搜榜']
     for i,obj in enumerate(r):
@@ -70,7 +70,7 @@ async def baiduresou(bot: Bot, event: GroupMessageEvent):
     bot_id = bot.self_id
     await bot.send(event=event, message='获取中……')
     url='https://top.baidu.com/board?tab=realtime'
-    res=requests.get(url)
+    res=httpx.get(url)
     r=res.text
     data = re.search('(<!--s-data:)({.+})(-->)', r)
     r=json.loads(data.groups()[1])["data"]["cards"][0]["content"][:cnt]
@@ -91,7 +91,7 @@ async def zhihuresou(bot: Bot, event: GroupMessageEvent):
     bot_id = bot.self_id
     await bot.send(event=event, message='获取中……')
     url='https://www.zhihu.com/billboard'
-    res=requests.get(url)
+    res=httpx.get(url)
     r=res.text
     data = re.search('("hotList":\\[{)(.+?)(}\\])', r)
     data=data.groups()[1]
@@ -114,7 +114,7 @@ async def tiebaresou(bot: Bot, event: GroupMessageEvent):
     bot_id = bot.self_id
     await bot.send(event=event, message='获取中……')
     url='https://tieba.baidu.com/hottopic/browse/topicList'
-    res=requests.get(url)
+    res=httpx.get(url)
     r=res.json()["data"]["bang_topic"]["topic_list"][:cnt]
     msg_list = ['贴吧热议榜']
     for i,obj in enumerate(r):
