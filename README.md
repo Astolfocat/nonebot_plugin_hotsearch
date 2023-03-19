@@ -8,6 +8,8 @@
 
 # nonebot-plugin-hotsearch
 
+_✨ 热搜获取插件 for nonebot2 ✨_
+
 
 <a href="https://cdn.jsdelivr.net/gh/TheLZY/nonebot_plugin_tuan_chatgpt@master/LICENSE.md">
     <img src="https://img.shields.io/github/license/TheLZY/nonebot_plugin_tuan_chatgpt.svg" alt="license">
@@ -15,6 +17,8 @@
 <img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="python">
 
 </div>
+
+
 
 ## 📖 介绍
 
@@ -37,6 +41,21 @@ nb plugin install nonebot-plugin-hotsearch
 pip install nonebot-plugin-hotsearch
 ```
 
+- 随后，在项目的`pyproject.toml`或`bot.py`中加上如下代码，加载插件（根据版本而定）
+
+`pyproject.toml`中添加
+
+```
+plugins = ["nonebot_plugin_quote"]
+```
+
+或
+
+`bot.py`中添加
+
+```
+nonebot.load_plugin("nonebot_plugin_quote")
+```
 
 ## 🎉 使用
 
@@ -58,7 +77,7 @@ Bot框架：
 [NoneBot](https://github.com/nonebot)
 
 README模板参考：
-[TheLZY|nonebot-plugin-tuan-chatgpt](https://github.com/TheLZY/nonebot_plugin_tuan_chatgpt/blob/master/README.md)
+[A-kirami|nonebot-plugin-template](https://github.com/A-kirami/nonebot-plugin-template)
 
 插件灵感及参考来源：
 [BeiYazi0|HoshinoBot的热搜插件](https://github.com/BeiYazi0/resou)
